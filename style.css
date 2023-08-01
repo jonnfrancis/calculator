@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;800&family=Outfit:wght@300;400;700&display=swap");
+:root {
+  --clr-nuetral-100: hsla(0, 0%, 100%, 1);
+  --clr-primary-800: hsla(229, 47%, 17%, 1);
+  --clr-primary-700: hsla(229, 43%, 20%, 1);
+  --clr-primary-400: hsla(230, 50%, 58%, 0.3);
+  --clr-primary-300: hsla(229, 36%, 39%, 1);
+  --clr-primary-200: hsla(229, 21%, 53%, 1);
+  --clr-accent-400: hsla(147, 93%, 43%, 1);
+  --clr-secondary-400: hsla(229, 78%, 60%, 1);
+
+  --ff-base: "Outfit", sans-serif;
+  --ff-gd: "EB Garamond", serif;
+  --ff-inter: "Inter", sans-serif;
+
+  --fw-regular: 300;
+  --fw-semi-bold: 400;
+  --fw-bold: 700;
+
+  --fs-200: 0.875rem;
+  --fs-300: 1rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.375rem;
+  --fs-600: 1.75rem;
+  --fs-700: clamp(2rem, 10vw - 0.5rem, 3.25rem);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+/* Reset some default styles */
+html,
+body {
+  width: 100%;
+  overscroll-behavior: none;
+  min-height: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  height: 100vh;
+  height: 100dvh;
+  background: rgb(220, 72, 176);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(220, 72, 176, 1) 0%,
+    rgba(89, 69, 144, 1) 37%,
+    rgba(85, 109, 152, 1) 47%,
+    rgba(71, 190, 208, 1) 79%,
+    rgba(75, 204, 177, 1) 100%
+  );
+}
+main {
+  width: min(25rem, 100% - 2rem);
+  background-image: url("./media/bg.png");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 95vh;
+  border: 1px solid #000;
+  box-shadow: 7px 6px 15px 0px rgba(0, 0, 0, 0.59);
+}
+.header {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 65px;
+  margin-block: 1.25rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  font-family: var(--ff-base);
+  color: white;
+}
+.hamburger-menu {
+}
+
+.calc {
+  color: #efd7ff;
+  font-family: Outfit;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.by {
+  color: #f7ddff;
+  font-family: Outfit;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.jf {
+  color: #f7ddff;
+  font-family: Outfit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.calculator-screen {
+  border-radius: 20px;
+  background: #47bfcb;
+  width: calc(100% - 2rem);
+  height: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-family: fira code, Outfit;
+  font-size: 3rem;
+}
+
+.calculator-buttons {
+  display: grid;
+  width: calc(100% - 2rem);
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 33px 25px;
+  margin-block: 2.125rem;
+  font-family: var(--ff-base);
+  font-size: var(--fs-500);
+}
+.calculator-button1 {
+  height: 35px;
+  border-radius: 10px;
+  background: #504377;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.47);
+}
+.button-clr {
+  background: #52b2df;
+}
+.math-buttons {
+  width: calc(100% - 2rem);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.operators {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 31px;
+  background: #f59b60;
+  padding: 0.75rem;
+  gap: 31px 20px;
+  font-family: var(--ff-base);
+  font-size: var(--fs-500);
+}
+.calculator-button2 {
+  border-radius: 13px;
+  background: #f3a962;
+  height: 42px;
+  box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.47);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  gap: 31px 24px;
+  font-family: var(--ff-base);
+  font-size: var(--fs-500);
+}
+.calculator-button {
+  width: 47px;
+  height: 38px;
+  box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.47);
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #5ac5e9;
+}
+.bottom-buttons {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - 2rem);
+  margin-left: auto;
+  margin-right: auto;
+  gap: 1.125rem;
+  margin-block: 1rem;
+}
+.bottom-button {
+  border-radius: 30px;
+  background: #43b5d1;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.bb1 {
+}
+.bb2 {
+}
