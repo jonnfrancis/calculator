@@ -83,9 +83,6 @@ main {
   font-family: var(--ff-base);
   color: white;
 }
-.hamburger-menu {
-}
-
 .calc {
   color: #efd7ff;
   font-family: Outfit;
@@ -114,7 +111,8 @@ main {
   border-radius: 20px;
   background: #47bfcb;
   width: calc(100% - 2rem);
-  height: 20vh;
+  padding: .5rem;
+  height: 17vh;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -159,8 +157,10 @@ main {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1r 2fr;
   border-radius: 31px;
   background: #f59b60;
+  background: #EA8460;
   padding: 0.75rem;
   gap: 31px 20px;
   font-family: var(--ff-base);
@@ -202,15 +202,20 @@ main {
   gap: 1.125rem;
   margin-block: 1rem;
 }
+.calculator-button:hover {
+  background-color: #F6A761;
+}
 .bottom-button {
   border-radius: 30px;
   background: #43b5d1;
   padding: 0.75rem;
   display: flex;
   justify-content: center;
+  font-family: var(--ff-gd);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-semi-bold);
   width: 100%;
 }
-.bb1 {
-}
 .bb2 {
+  background: #48cca9;
 }

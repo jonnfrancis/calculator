@@ -35,54 +35,56 @@
       <div class="calculator-screen" id="screen">0</div>
       <div class="calculator-buttons">
         <!-- Top line - Mathematical function symbols -->
-        <div class="calculator-button1">AC</div>
-        <div class="calculator-button1">%</div>
-        <div class="calculator-button1">.</div>
-        <div class="calculator-button1">^</div>
-        <div class="calculator-button1">C</div>
+        <div class="calculator-button1" id="clear">(</div>
+        <div class="calculator-button1" id="percentage1">)</div>
+        <div class="calculator-button1" id="decimal">.</div>
+        <div class="calculator-button1" id="exponent">^</div>
+        <div class="calculator-button1" id="delete">C</div>
 
         <!-- Bottom line - Memory function symbols -->
-        <div class="calculator-button1 button-clr">MR</div>
-        <div class="calculator-button1 button-clr">M+</div>
-        <div class="calculator-button1 button-clr">M-</div>
-        <div class="calculator-button1 button-clr">MC</div>
-        <div class="calculator-button1 button-clr">⌫</div>
+        <div class="calculator-button1 button-clr" id="memoryRecall">MR</div>
+        <div class="calculator-button1 button-clr" id="memoryAdd">M+</div>
+        <div class="calculator-button1 button-clr" id="memorySubtract">M-</div>
+        <div class="calculator-button1 button-clr" id="memoryClear">MC</div>
+        <div class="calculator-button1 button-clr" id="backspace">⌫</div>
       </div>
       <div class="math-buttons">
         <div class="operators">
-          <div class="calculator-button2">+</div>
-          <div class="calculator-button2">-</div>
-          <div class="calculator-button2">×</div>
-          <div class="calculator-button2">÷</div>
-          <div class="calculator-button2">=</div>
-          <div class="calculator-button2">%</div>
-          <div class="calculator-button2">(</div>
-          <div class="calculator-button2">)</div>
+          <div class="calculator-button2" id="add">+</div>
+          <div class="calculator-button2" id="subtract">-</div>
+          <div class="calculator-button2" id="multiply">×</div>
+          <div class="calculator-button2" id="divide">÷</div>
+          <div class="calculator-button2" id="equals">=</div>
+          <div class="calculator-button2" id="percentage">%</div>
+          <div class="calculator-button2" id="square">x²</div>
+          <div class="calculator-button2" id="square-root">√</div>
         </div>
 
         <!-- Numbers div with 13 buttons -->
         <div class="numbers">
-          <div class="calculator-button">7</div>
-          <div class="calculator-button">8</div>
-          <div class="calculator-button">9</div>
-          <div class="calculator-button">4</div>
-          <div class="calculator-button">5</div>
-          <div class="calculator-button">6</div>
-          <div class="calculator-button">1</div>
-          <div class="calculator-button">2</div>
-          <div class="calculator-button">3</div>
-          <div class="calculator-button">0</div>
-          <div class="calculator-button">.</div>
-          <div class="calculator-button">C</div>
+          <div class="calculator-button" id="seven">7</div>
+          <div class="calculator-button" id="eight">8</div>
+          <div class="calculator-button" id="nine">9</div>
+          <div class="calculator-button" id="four">4</div>
+          <div class="calculator-button" id="five">5</div>
+          <div class="calculator-button" id="six">6</div>
+          <div class="calculator-button" id="one">1</div>
+          <div class="calculator-button" id="two">2</div>
+          <div class="calculator-button" id="three">3</div>
+          <div class="calculator-button" id="zero">0</div>
+          <div class="calculator-button" id="decimal2">.</div>
+          <div class="calculator-button" id="clear2">C</div>
         </div>
       </div>
       <!-- Bottom div buttons -->
       <div class="bottom-buttons">
         <!-- See More button -->
-        <div class="bottom-button bb1">See More</div>
+        <div class="bottom-button bb1" id="seeMore">See More</div>
         <!-- Refresh Page button -->
-        <div class="bottom-button bb2">Refresh Page</div>
+        <div class="bottom-button bb2" id="refreshPage">Refresh Page</div>
       </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
