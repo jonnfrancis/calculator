@@ -120,6 +120,7 @@ main {
   justify-content: flex-end;
   font-family: fira code, Outfit;
   font-size: 3rem;
+  overflow: hidden;
 }
 
 .calculator-buttons {
@@ -141,6 +142,10 @@ main {
   align-items: center;
   justify-content: center;
   box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.47);
+  transition: background-color 0.2s ease;
+}
+.calculator-button1:hover {
+  background-color: var(--clr-primary-400);
 }
 .button-clr {
   background: #52b2df;
@@ -174,6 +179,10 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.2s ease;
+}
+.calculator-button2:hover {
+  background-color: #52b2df;
 }
 .numbers {
   display: grid;
@@ -192,7 +201,13 @@ main {
   align-items: center;
   justify-content: center;
   background: #5ac5e9;
+  transition: background-color 0.2s ease;
 }
+
+.calculator-button:hover {
+  background-color: #F6A761;
+}
+
 .bottom-buttons {
   display: flex;
   flex-direction: row;
@@ -202,9 +217,7 @@ main {
   gap: 1.125rem;
   margin-block: 1rem;
 }
-.calculator-button:hover {
-  background-color: #F6A761;
-}
+
 .bottom-button {
   border-radius: 30px;
   background: #43b5d1;

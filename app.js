@@ -12,6 +12,18 @@ let memoryValue = 0;
 // Initialize a variable to store the current value on the screen
 let currentValue = "0";
 
+// Get the touch sound elements
+const touchSound = document.getElementById('touchSound');
+const touchSound1 = document.getElementById('touchSound1');
+const touchSound2 = document.getElementById('touchSound2');
+const touchSound3 = document.getElementById('touchSound3');
+
+// Function to play the touch sound
+function playTouchSound(sound) {
+  sound.currentTime = 0; // Rewind the audio to the beginning
+  sound.play();
+}
+
 // Function to update the calculator screen with the given value
 function updateScreen(value) {
   screen.textContent = value;
@@ -21,6 +33,7 @@ function updateScreen(value) {
 const buttons = document.querySelectorAll(".calculator-button");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
+    playTouchSound(touchSound);
     const buttonValue = button.textContent;
     if (buttonValue === "C") {
       // Clear the screen when "C" button is clicked
@@ -49,6 +62,29 @@ buttons.forEach((button) => {
         );
       }
     }
+  });
+});
+
+// Get all buttons with class "calculator-button2" and add event listeners
+const buttons2 = document.querySelectorAll('.calculator-button2');
+buttons2.forEach(button => {
+  button.addEventListener('click', () => {
+    if (button.id !== 'equals') {
+      // Play touchSound2 when any calculator-button2 is clicked (excluding the equal sign)
+      playTouchSound(touchSound1);
+    } else {
+      // Play touchSound when the equal sign is clicked
+      playTouchSound(touchSound2);
+    }
+  });
+});
+
+// Get all buttons with class "calculator-button1" and add event listeners
+const buttons1 = document.querySelectorAll('.calculator-button1');
+buttons1.forEach(button => {
+  button.addEventListener('click', () => {
+    // Play touchSound3 when any calculator-button1 is clicked
+    playTouchSound(touchSound3);
   });
 });
 
@@ -215,49 +251,49 @@ function backspace() {
   if (newNumber === "") {
     updateScreen("0");
   }
-}  
+}
 // Function to handle the All Clear (AC) operation
 function allClear() {
-    // Clear the current value and reset the calculator
-    currentValue = '0';
-    waitingForNextNumber = false;
-    pendingOperation = null;
-    updateScreen(currentValue);
+  // Clear the current value and reset the calculator
+  currentValue = "0";
+  waitingForNextNumber = false;
+  pendingOperation = null;
+  updateScreen(currentValue);
+}
+// Function to handle the Decimal (.) operation
+function decimal() {
+  // If the screen does not already contain a decimal point, add one
+  if (!screen.textContent.includes(".")) {
+    updateScreen(screen.textContent + ".");
   }
-  // Function to handle the Decimal (.) operation
-  function decimal() {
-    // If the screen does not already contain a decimal point, add one
-    if (!screen.textContent.includes('.')) {
-      updateScreen(screen.textContent + '.');
-    }
-  }
-  
-  // Function to handle the Exponent (^) operation
+}
+
+// Function to handle the Exponent (^) operation
 function exponent() {
-    // Convert the current value on the screen to a number
-    const currentNumber = parseFloat(currentValue);
-  
-    // Perform the exponentiation operation with the current value as the base and 2 as the exponent
-    const result = Math.pow(currentNumber, 2);
-  
-    // Update the screen with the result
-    updateScreen(result);
-  
-    return result;
+  // Convert the current value on the screen to a number
+  const currentNumber = parseFloat(currentValue);
+
+  // Perform the exponentiation operation with the current value as the base and 2 as the exponent
+  const result = Math.pow(currentNumber, 2);
+
+  // Update the screen with the result
+  updateScreen(result);
+
+  return result;
+}
+
+// Function to handle the Delete (C) operation
+function deleteLastCharacter() {
+  // Remove the last character from the current value on the screen
+  const currentNumber = screen.textContent;
+  const newNumber = currentNumber.slice(0, -1);
+  updateScreen(newNumber);
+
+  // If the current value on the screen becomes empty, set it to 0
+  if (newNumber === "") {
+    updateScreen("0");
   }
-  
-  // Function to handle the Delete (C) operation
-  function deleteLastCharacter() {
-    // Remove the last character from the current value on the screen
-    const currentNumber = screen.textContent;
-    const newNumber = currentNumber.slice(0, -1);
-    updateScreen(newNumber);
-  
-    // If the current value on the screen becomes empty, set it to 0
-    if (newNumber === '') {
-      updateScreen('0');
-    }
-  }
+}
 
 // Add event listener to the "Add" button
 addButton.addEventListener("click", () => {
@@ -410,15 +446,15 @@ backspaceButton.addEventListener("click", () => {
 });
 
 // Add event listener to the Decimal (.) button
-const decimalButton = document.getElementById('decimal');
-decimalButton.addEventListener('click', () => {
+const decimalButton = document.getElementById("decimal");
+decimalButton.addEventListener("click", () => {
   // Perform the Decimal operation and update the screen
   decimal();
 });
 
 // Add event listener to the Exponent (^) button
-const exponentButton = document.getElementById('exponent');
-exponentButton.addEventListener('click', () => {
+const exponentButton = document.getElementById("exponent");
+exponentButton.addEventListener("click", () => {
   // Perform the Exponent operation and update the screen
   const result = exponent();
   // Store the result as the new current value for further calculations
@@ -426,21 +462,40 @@ exponentButton.addEventListener('click', () => {
 });
 
 // Add event listener to the Delete (C) button
-const deleteButton = document.getElementById('delete');
-deleteButton.addEventListener('click', () => {
+const deleteButton = document.getElementById("delete");
+deleteButton.addEventListener("click", () => {
   // Perform the Delete operation
   allClear();
 });
 
 // Add event listener to the Parentheses () button
-const parentheses = document.getElementById('clear');
-parentheses.addEventListener('click', () => {
+const parentheses = document.getElementById("clear");
+parentheses.addEventListener("click", () => {
   // Add parentheses to the current value on the screen
-  updateScreen(screen.textContent + '(');
+  updateScreen(screen.textContent + "(");
 });
 // Add event listener to the Parentheses () button
-const parenthesesButton = document.getElementById('percentage1');
-parenthesesButton.addEventListener('click', () => {
+const parenthesesButton = document.getElementById("percentage1");
+parenthesesButton.addEventListener("click", () => {
   // Add parentheses to the current value on the screen
-  updateScreen(screen.textContent + ')');
+  updateScreen(screen.textContent + ")");
 });
+
+// Function to handle the "See More" button click event
+function handleSeeMoreButtonClick() {
+  window.location.href = 'https://jonnfrancis.github.io'; // Redirect to your portfolio project link
+}
+
+// Function to handle the "Refresh Page" button click event
+function handleRefreshPageButtonClick() {
+  location.reload(); // Reload the current page
+}
+
+// Add event listener to the "See More" button
+const seeMoreButton = document.getElementById('seeMore');
+seeMoreButton.addEventListener('click', handleSeeMoreButtonClick);
+
+// Add event listener to the "Refresh Page" button
+const refreshPageButton = document.getElementById('refreshPage');
+refreshPageButton.addEventListener('click', handleRefreshPageButtonClick);
+

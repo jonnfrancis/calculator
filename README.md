@@ -23,7 +23,7 @@ A modern calculator designed with precision and innovation.
 
 ## License
 
-This project is licensed under no licensing, It is free to use.
+This project is under no licensing, It is free to use.
 
 ## Contact
 
