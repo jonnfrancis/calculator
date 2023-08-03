@@ -33,7 +33,7 @@ function updateScreen(value) {
 const buttons = document.querySelectorAll(".calculator-button");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    playTouchSound(touchSound);
+    playTouchSound(touchSound1);
     const buttonValue = button.textContent;
     if (buttonValue === "C") {
       // Clear the screen when "C" button is clicked
@@ -71,7 +71,7 @@ buttons2.forEach(button => {
   button.addEventListener('click', () => {
     if (button.id !== 'equals') {
       // Play touchSound2 when any calculator-button2 is clicked (excluding the equal sign)
-      playTouchSound(touchSound1);
+      playTouchSound(touchSound);
     } else {
       // Play touchSound when the equal sign is clicked
       playTouchSound(touchSound2);
