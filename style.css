@@ -63,13 +63,13 @@ body {
   );
 }
 main {
-  width: min(25rem, 100% - 2rem);
+  width: min(25rem);
   background-image: url("./media/bg.png");
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
   height: 95vh;
-  border: 1px solid #000;
+  border-radius: 5px;
   box-shadow: 7px 6px 15px 0px rgba(0, 0, 0, 0.59);
 }
 .header {
