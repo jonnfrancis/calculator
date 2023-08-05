@@ -69,7 +69,7 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   height: 95vh;
-  border-radius: 5px;
+  border-radius: 7px;
   box-shadow: 7px 6px 15px 0px rgba(0, 0, 0, 0.59);
 }
 .header {
