@@ -47,17 +47,15 @@ body::-webkit-scrollbar {
   display: none;
 }
 body {
-  height: 100vh;
-  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
   background: rgb(220, 72, 176);
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(
     180deg,
-    rgba(220, 72, 176, 1) 0%,
-    rgba(89, 69, 144, 1) 37%,
-    rgba(85, 109, 152, 1) 47%,
+    rgba(89, 69, 144, 1) 0%,
     rgba(71, 190, 208, 1) 79%,
     rgba(75, 204, 177, 1) 100%
   );
@@ -68,7 +66,7 @@ main {
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
-  height: 95vh;
+  /* height: 95vh; */
   border-radius: 7px;
   box-shadow: 7px 6px 15px 0px rgba(0, 0, 0, 0.59);
 }
